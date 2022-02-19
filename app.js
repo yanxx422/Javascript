@@ -154,7 +154,7 @@
      */
     function generateTiles(dinos,human){
         let fact;
-        dinos = shuffleAr;
+        dinos = shuffleArray(dinos);
         // Just insert an empty string into dinos array and deleting 0 items first(So just an insert)
         dinos.splice(4, 0, '');
         for (let i = 0; i < dinos.length; i++){

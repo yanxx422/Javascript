@@ -31,7 +31,7 @@
             return dino_array;
         })
         .catch((error) => {
-            console.error("Failed");
+            console.error("Failed in reading file");
         });
     }
 
@@ -64,7 +64,7 @@
     Dino.prototype.CompareWeight = function (){
         let human = createHuman();
         let humanWeight = parseInt(human['weight']);
-        if (parseInt(this.wight) > humanWeight){
+        if (parseInt(this.weight) > humanWeight){
             return `${this.species} weighs more than you.`;
         } else if (parseInt(this.weight) < humanWeight) {
             return `You weigh more than ${this.species}.`;
@@ -101,7 +101,7 @@
         if (this.diet.toLowerCase() === humanDiet){
             return `${this.species} and you have the same diet ${this.diet}.`;
         } else {
-            return `${this.species} enjoy this diet: ${this.diet}, but you prefer ${humanDiet}.`;
+            return `${this.species} enjoys this diet: ${this.diet}, but you prefer ${humanDiet}.`;
         }
     }
 
@@ -155,12 +155,11 @@
     function generateTiles(dinos,human){
         let fact;
         dinos = shuffleArray(dinos);
-        // Just insert an empty string into dinos array and deleting 0 items first(So just an insert)
+        // insert an empty string into dinos array and deleting 0 items first(so just an insert)
         dinos.splice(4, 0, '');
         for (let i = 0; i < dinos.length; i++){
 
             if (i !== 4){
-                console.log(i)
                 let dino = dinos[i];
                 let dino_div = document.createElement('div');
                 dino_div.className = 'grid-item';

@@ -171,7 +171,8 @@
                     fact = dino.fact;
                 }
            
-                dino_div.innerHTML = `<h3>${dino.species}</h3><img src="images/${dino.species}.png"><p>${fact}</p>`;
+                dino_div.innerHTML = `<h3>${dino.species}</h3><img src="images/${dino.species.toLowerCase()}.png"><p>${fact}</p>`;
+                console.log(dino_div.innerHTML)
                 document.getElementById('grid').appendChild(dino_div);
             }
             else {
